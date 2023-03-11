@@ -7,10 +7,13 @@
     --clr-dark-cyan: hsl(192, 100%, 9%);
     --clr-grayish-blue: hsl(208, 11%, 55%);
     
+    --bg-grad: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
   
     /* Dark Mode */
     --clr-very-dark-blue: hsl(235,21%,11%);
-    --clr-dark-desaturated-blue: hsl(235, 24%, 19%)
+    --clr-dark-desaturated-blue: hsl(235, 24%, 19%);
+    --clr-light-grayish-blue: hsl(234, 39%, 85%);
+    --clr-very-dark-grayish-blue: hsl(237, 14%, 26% );
 
 
     --ff-primary: 'Josefin Sans', sans-serif;
@@ -21,6 +24,8 @@
     --fs-300: 0.6875rem;
     --fs-400: 0.8125rem;
     --fs-500: 1.25rem;
+
+    --transition: all 0.3 ease;
   }
   
   /* Box sizing rules */
@@ -101,11 +106,10 @@
   }
   
   body {
-      background-color: var(--clr-neutral-100);
+      background-color: var(--clr-very-dark-blue);
       font-family: var(--ff-primary);
 
-      display: flex;
-      
+      display: flex;   
       justify-content: center;
 
     }
@@ -138,6 +142,9 @@
     margin: 0 30px;
     margin-top: 100px;
     
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
 
   .header {
@@ -157,16 +164,33 @@
 
   .new-todo {
     width: 100%;
-    background-color: var(--clr-very-dark-blue) ;
-    padding: 1rem;
+    background-color: var(--clr-dark-desaturated-blue) ;
+    padding: 1.4rem;
     border-radius: 4px;
 
     display: flex;
   }
 
   .check {
-    width: 10vh;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+  }
+
+  .check-mark {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--clr-very-dark-grayish-blue);
+    cursor: pointer;
+    background: transparent;
+
+    transition: all 1s ease ;
+  }
+
+  .check-mark:hover {
+    background: linear-gradient(180deg, #57DDFF 0%, #C058F3 100%);
   }
 
   .todo-input{
@@ -176,5 +200,20 @@
   }
 
   .todo-input form{
-    width: 100;
+    flex-grow: 1;
+  }
+
+  .todo-input input {
+    width: 100%;
+    padding: .5rem;
+    outline: none;
+
+    font-size: 1.8rem;
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
+
+  .todo-input input::placeholder {
+    color: var(--clr-very-dark-grayish-blue);
   }
