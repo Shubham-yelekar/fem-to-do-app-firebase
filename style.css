@@ -8,6 +8,11 @@
     --clr-grayish-blue: hsl(208, 11%, 55%);
     
   
+    /* Dark Mode */
+    --clr-very-dark-blue: hsl(235,21%,11%);
+    --clr-dark-desaturated-blue: hsl(235, 24%, 19%)
+
+
     --ff-primary: 'Josefin Sans', sans-serif;
 
     --fw-400: 400;
@@ -97,6 +102,12 @@
   
   body {
       background-color: var(--clr-neutral-100);
+      font-family: var(--ff-primary);
+
+      display: flex;
+      
+      justify-content: center;
+
     }
     
   /* utilities */
@@ -111,6 +122,7 @@
     left: 0;
     right: 0;
     height: 350px ;
+    z-index: -1;
   }
 
   .bg-image img {
@@ -118,4 +130,51 @@
     height: 100%;
     object-fit: cover;
     object-position: left;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 30px;
+    margin-top: 100px;
+    
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    padding: 1rem 0;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    line-height: 1rem;
+    letter-spacing: 12px;
+    color: white;
+  }
+
+  .new-todo {
+    width: 100%;
+    background-color: var(--clr-very-dark-blue) ;
+    padding: 1rem;
+    border-radius: 4px;
+
+    display: flex;
+  }
+
+  .check {
+    width: 10vh;
+    
+  }
+
+  .todo-input{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .todo-input form{
+    width: 100;
   }
